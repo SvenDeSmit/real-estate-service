@@ -26,10 +26,13 @@ public class RealEstateController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<AbstractRealEstate> getRealEstateByID(@PathVariable("id") String id) {
+		log.info("Real Estate info requested for ID "+id);
 		Optional<AbstractRealEstate> re = svc.getRealEstateById(id);
 		if(re.isPresent()) {
+			log.info("Real Estate info found for ID "+id);
 			return new ResponseEntity<>(re.get(),HttpStatus.OK);
 		}
+		log.info("Real Estate info NOT found for ID "+id);
 		return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);
 	}
 

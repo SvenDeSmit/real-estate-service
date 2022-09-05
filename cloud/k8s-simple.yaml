@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment # Kubernetes resource kind we are creating
+metadata:
+  name: real-estate-service
+spec:
+  selector:
+    matchLabels:
+      app: real-estate-service
+  replicas: 1 # Number of replicas that will be created for this deployment
+  template:
+    metadata:
+      labels:
+        app: real-estate-service
+    spec:
+      containers:
+        - name: real-estate-service
+          image: svendesmit/real-estate-service:v0.1
+          env:
+            - name: SPRING_PROFILE_AVTIVE
+              value: PRD
+          resources:
+            requests:
+              memory: "732Mi"
+              cpu: "500m"  
+            limits:
+              memory: "732Mi"
+              cpu: "500m"  
+# Image that will be used to containers in the cluster
+#          imagePullPolicy: IfNotPresent
+#          ports:
+#            - containerPort: 8080 
+# The port that the container is running on in the cluster

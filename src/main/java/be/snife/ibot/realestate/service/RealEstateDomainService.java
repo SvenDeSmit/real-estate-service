@@ -17,7 +17,9 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class RealEstateDomainService implements RealEstateService {
 
-	public Optional<AbstractRealEstate> getRealEstateById(String ID) {
+	public Optional<AbstractRealEstate> getRealEstateById(String id) {
+		log.info("getRealEstateById operation for Real Estate domain service called for ID "+id);
+		log.info("Result = "+getRealEState1().toString());
 		return Optional.of(getRealEState1());
 	}
 	
