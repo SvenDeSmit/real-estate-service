@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: real-estate-service
-          image: svendesmit/real-estate-service:v0.1
+          image: docker.io/svendesmit/real-estate-service:v0.1
           env:
             - name: SPRING_PROFILE_AVTIVE
               value: PRD
