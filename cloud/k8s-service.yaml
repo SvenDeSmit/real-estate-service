@@ -9,7 +9,7 @@ spec:
     app: real-estate-service
   ports:
     - protocol: "TCP"
-      port: 80 # The port that the service is running on in the cluster
-      targetPort: 80 # The port exposed by the service
-      name: 80-80
+      port: 8080 # The port that the service is running on in the cluster
+      targetPort: 8080 # The port exposed by the service
+      name: 8080-8080
   type: LoadBalancer # type of the service.
